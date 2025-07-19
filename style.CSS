@@ -1,0 +1,109 @@
+/**
+ * Tier 排序展示
+ */
+.ovtd-tier-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.ovtd-tier-row {
+  display: flex;
+  align-items: center;
+}
+
+.ovtd-tier-label {
+  width: 60px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  background: #7f8c8d; /* 默认灰色，后面可覆盖 */
+}
+
+/* 按 sanitize_title 后的类名覆盖背景色 */
+.ovtd-tier-巅峰    .ovtd-tier-label,
+.ovtd-tier--      .ovtd-tier-label { background: #e74c3c; }
+.ovtd-tier-t0     .ovtd-tier-label { background: #d35400; }
+.ovtd-tier-t0-5   .ovtd-tier-label { background: #f39c12; }
+.ovtd-tier-t1     .ovtd-tier-label { background: #27ae60; }
+.ovtd-tier-t1-5   .ovtd-tier-label { background: #2ecc71; }
+.ovtd-tier-t2     .ovtd-tier-label { background: #3498db; }
+.ovtd-tier-t2-5   .ovtd-tier-label { background: #9b59b6; }
+.ovtd-tier-t3     .ovtd-tier-label { background: #8e44ad; }
+.ovtd-tier-t3-5   .ovtd-tier-label { background: #34495e; }
+.ovtd-tier-t4     .ovtd-tier-label { background: #16a085; }
+.ovtd-tier-t5     .ovtd-tier-label { background: #7f8c8d; }
+
+/* 干员卡片布局 */
+.ovtd-ops {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ovtd-op-card img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform .2s;
+}
+
+.ovtd-op-card img:hover {
+  transform: scale(1.1);
+}
+
+/**
+ * 投票按钮 & 结果条
+ */
+.op-card {
+  position: relative;
+  text-align: center;
+}
+
+.btn-vote {
+  margin-top: 6px;
+  padding: 4px 8px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-vote:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vote-result {
+  margin-top: 6px;
+  display: none;
+  font-size: 0.9em;
+}
+
+.vote-result .percent {
+  margin-right: 6px;
+}
+
+.vote-result .bar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 4px;
+}
+
+.vote-result .fill {
+  width: 0;
+  height: 100%;
+  background: #2ecc71;
+}
